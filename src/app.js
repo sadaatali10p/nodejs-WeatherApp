@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const hbs = require('hbs');
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '../public')
 const partialsDir = path.join(__dirname, '../templates/partials') // thse lines can be used to setup a customized views directory
@@ -81,6 +82,6 @@ app.get('/weather', (req, res) => {
     res.send(console.log('Pleasant!'))
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
